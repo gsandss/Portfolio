@@ -21,7 +21,7 @@
     list-style: none;
     background: transparent;
     margin-right: auto;
-    margin-left: 8rem;
+    margin-left: 6rem;
 }
 
 .navbar__link_right {
@@ -54,7 +54,9 @@
 .navbar__link_right:hover,
 .navbar__link_right:focus-visible{
     border-color:rgb(52, 16, 0); 
+    background: rgb(235, 227, 227);
     transition: border-color 0.5s ease;
+    border-radius: 4px;
     padding: 0.2rem
 }
 
