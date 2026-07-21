@@ -30,7 +30,9 @@ function Footer(){
         ))}
       </ul>
 
-      <img className="footer__logo" src={logo} alt="Gavin Sands logo" />
+      <a href="https://www.iastate.edu/">
+        <img className="footer__logo" src={logo} alt="Gavin Sands logo"/>
+      </a>
 
       <ul className="footer__list footer__list--right" aria-label="Secondary navigation">
         {rightItems.map((link) => (

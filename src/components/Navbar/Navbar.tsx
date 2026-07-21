@@ -1,15 +1,14 @@
+import { NavLink } from 'react-router-dom'
 import './Navbar.css'
 
-const navLinksLeft = [
-  { label: 'Gavin Sands', href: '#' },
-]
+const navLinksLeft = [{ label: 'Gavin Sands', href: '/' }]
 
 const navLinksRight = [
-  { label: 'Resume', href: ' #resume '},
-  { label: 'About', href: '#about' },
-  { label: 'Projects', href: '#projects' },
-  { label: 'Skills', href: '#skills' },
-  { label: 'Contact', href: '#contact' }
+  { label: 'About', href: '/' },
+  { label: 'Resume', href: '/resume' },
+  { label: 'Projects', href: '/projects' },
+  { label: 'Skills', href: '/skills' },
+  { label: 'Contact', href: '/contact' },
 ]
 
 function Navbar() {
@@ -18,9 +17,9 @@ function Navbar() {
       <ul className="navbar__list_left">
         {navLinksLeft.map((link) => (
           <li className="navbar__item" key={link.label}>
-            <a className="navbar__link_left" href={link.href}>
+            <NavLink className="navbar__link_left" to={link.href} end>
               {link.label}
-            </a>
+            </NavLink>
           </li>
         ))}
       </ul>
@@ -28,9 +27,9 @@ function Navbar() {
       <ul className="navbar__list_right">
         {navLinksRight.map((link) => (
           <li className="navbar__item" key={link.label}>
-            <a className="navbar__link_right" href={link.href}>
+            <NavLink className="navbar__link_right" to={link.href} end>
               {link.label}
-            </a>
+            </NavLink>
           </li>
         ))}
       </ul>
