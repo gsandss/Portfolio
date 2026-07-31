@@ -69,13 +69,10 @@
 .navbar__link_right:focus-visible,
 .navbar__link_right.active,
 .navbar__link_left:hover,
-.navbar__link_left:focus-visible,
-.navbar__link_left.active {
+.navbar__link_left:focus-visible{
     color: rgb(99, 59, 29);
-    transform: translateY(-1px);
 }
 
-.navbar__link_right.active,
-.navbar__link_left.active {
+.navbar__link_right.active{
     font-weight: 600;
 }
