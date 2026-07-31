@@ -10,7 +10,7 @@ function SkillsPage() {
 					<h1>Skills</h1>
 				</div>
 				<p className="skills-page__summary">
-					I’ve built this toolkit through classes, hands-on projects, and a genuine curiosity about
+					I've built this toolkit through classes, hands-on projects, and a genuine curiosity about
 					how technology can make everyday problems feel simpler.
 				</p>
 			</header>
@@ -20,7 +20,6 @@ function SkillsPage() {
 					<article className="skill-card" key={group.title}>
 						<div className="skill-card__number">0{groupIndex + 1}</div>
 						<h2>{group.title}</h2>
-						<p>{group.description}</p>
 						<ul className="skill-list">
 							{group.skills.map((skill, skillIndex) => (
 								<li key={skill}>
