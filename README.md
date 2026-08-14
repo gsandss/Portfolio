@@ -4,7 +4,7 @@
 
 My responsive portfolio built using React, Typescript and Node.js to showcase my projects, experience, technical skill and resume as a Computer Science student at Iowa State University. 
 
-## ? About
+## About
 
 This portfolio serves as a central place to highlight my work as a Computer Science student and software developer. It features information about me, my projects, technical skills, and ways to connect.
 
