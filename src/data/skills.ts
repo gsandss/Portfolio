@@ -1,23 +1,18 @@
 export const skillGroups = [
   {
     title: 'Languages',
-    skills: ['Python', 'JavaScript', 'TypeScript', 'Java', 'C', 'SQL'],
+    skills: ['Python', 'Java', 'C', 'JavaScript', 'TypeScript'],
     icon: 'code',
-    projectSlug: 'sorting-performance',
-    example: 'Java file input, sorting, and CSV output.',
-  },
-  {
-    title: 'AI & Data',
-    skills: ['Machine Learning', 'Data Analysis', 'Natural Language Processing', 'Pandas', 'NumPy'],
-    icon: 'network',
-    projectSlug: 'ai-code-debugger',
-    example: 'Local language model integration with a Python API.',
-  },
-  {
-    title: 'Web Development',
-    skills: ['React', 'HTML & CSS', 'REST APIs', 'Responsive Design', 'Git'],
-    icon: 'layers',
     projectSlug: 'dsa-visualizer',
-    example: 'A React interface for step-by-step algorithm animations.',
+    example:
+      'I used JavaScript and React to show how a sorting algorithm changes an array at each step.',
+  },
+  {
+    title: 'Developer tools',
+    skills: ['Git', 'GitHub', 'GitLab', 'NumPy', 'Pandas', 'Matplotlib', 'Flask'],
+    icon: 'layers',
+    projectSlug: 'ai-code-debugger',
+    example:
+      'I built a Flask API that takes Python code from the editor and returns output and error explanations.',
   },
 ] as const

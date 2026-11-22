@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { skillGroups } from '../../data/skills'
 import { projects } from '../../data/projects'
+import { experience } from '../../data/resume'
 import Icon from '../../components/Icon'
 
 export default function SkillsPage() {
@@ -36,6 +37,19 @@ export default function SkillsPage() {
             </article>
           )
         })}
+        <article className="skill-group">
+          <Icon name="network" />
+          <h2>Research &amp; IT</h2>
+          <div className="skill-roles">
+            {experience.map((role) => (
+              <div className="skill-example" key={role.id}>
+                <p className="label">{role.organization}</p>
+                <Link to={'/resume#' + role.id}>{role.title}</Link>
+                <p>{role.practice}</p>
+              </div>
+            ))}
+          </div>
+        </article>
       </div>
     </section>
   )
