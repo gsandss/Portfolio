@@ -1,33 +1,41 @@
-import '../../App.css'
+import { Link } from 'react-router-dom'
 import { projects } from '../../data/projects'
+import ProjectCard from '../../components/ProjectCard'
+import Icon from '../../components/Icon'
 
-function ProjectsPage() {
+export default function ProjectsPage() {
   return (
-    <section className="projects-page">
-      <div className="projects-page__header">
-        <p className="projects-page__eyebrow">Selected Work</p>
+    <div className="wrap inside-page">
+      <header className="page-intro">
+        <p className="label with-rule">Selected work</p>
         <h1>Projects</h1>
-        <p className="projects-page__summary">
+        <p>
           A collection of recent builds focused on AI, thoughtful UX, and practical web products.
         </p>
-      </div>
-
-      <div className="projects-grid">
-        {projects.map((project) => (
-          <article className="project-card" key={project.title}>
-            <h2>{project.title}</h2>
-            <p>{project.description}</p>
-            <div className="project-card__tech">
-              {project.tech.map((item) => (
-                <span key={item}>{item}</span>
-              ))}
-            </div>
-            <a href={project.link}>View Project</a>
-          </article>
+      </header>
+      <section aria-labelledby="featured-title" className="featured-grid">
+        <h2 id="featured-title" className="sr-only">
+          Featured projects
+        </h2>
+        {projects.slice(0, 2).map((project) => (
+          <ProjectCard key={project.slug} project={project} />
         ))}
-      </div>
-    </section>
+      </section>
+      <section className="project-index">
+        <h2>More projects</h2>
+        {projects.slice(2).map((project) => (
+          <Link className="index-row" to={'/projects/' + project.slug} key={project.slug}>
+            <div>
+              <span className="label">{project.category}</span>
+              <h3>{project.title}</h3>
+              <p>{project.description}</p>
+            </div>
+            <span className="index-detail">
+              <Icon name="book" /> Project details
+            </span>
+          </Link>
+        ))}
+      </section>
+    </div>
   )
 }
-
-export default ProjectsPage

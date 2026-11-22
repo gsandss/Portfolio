@@ -1,51 +1,29 @@
+import { Link } from 'react-router-dom'
+import { contactLinks } from '../../data/contact'
 import './Footer.css'
-import logo from '../../assets/logo.png'
 
-const leftItems = [
-
-    { label: 'Gavin Sands' },
-    { label: 'Iowa State University'},
-    { label: 'Ames, IA' },
-
-]
-
-const rightItems = [
-{ label: 'Resume', href: ' #resume '},
-  { label: 'About', href: '#about' },
-  { label: 'Projects', href: '#projects' },
-  { label: 'Skills', href: '#skills' },
-  { label: 'Contact', href: '#contact' }
-]
-
-function Footer(){
-
-    return (
-    <nav className="footer" aria-label="Primary navigation">
-      <ul className="footer__list footer__list--left">
-        {leftItems.map((link, index) => (
-          <li key={link.label}>
-              {link.label}
-              { index < leftItems.length - 1 && " | "} 
-          </li>
-        ))}
-      </ul>
-
-      <a href="https://www.iastate.edu/">
-        <img className="footer__logo" src={logo} alt="Gavin Sands logo"/>
-      </a>
-
-      <ul className="footer__list footer__list--right" aria-label="Secondary navigation">
-        {rightItems.map((link) => (
-          <li key={link.label}>
-            <a href={link.href}>
-              {link.label}
-            </a>
-          </li>
-        ))}
-      </ul>
-    </nav>
+export default function Footer() {
+  return (
+    <footer className="footer">
+      <div className="wrap footer__inner">
+        <div>
+          <Link to="/" className="footer-name">
+            Gavin Sands
+          </Link>
+          <p>Iowa State University · Ames, Iowa</p>
+        </div>
+        <nav aria-label="Footer">
+          <Link to="/resume">Résumé</Link>
+          {contactLinks
+            .filter((link) => ['GitHub', 'LinkedIn'].includes(link.label))
+            .map((link) => (
+              <a key={link.label} href={link.href}>
+                {link.label}
+              </a>
+            ))}
+          <Link to="/contact">Contact</Link>
+        </nav>
+      </div>
+    </footer>
   )
-
 }
-
-export default Footer;

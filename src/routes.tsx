@@ -1,20 +1,25 @@
-import { Route, Routes } from 'react-router-dom'
+import { createBrowserRouter } from 'react-router-dom'
 import App from './App'
+import Layout from './components/Layout'
 import ContactPage from './pages/Contact/Contact'
 import ProjectsPage from './pages/Projects/projects'
+import ProjectDetail from './pages/Projects/ProjectDetail'
 import SkillsPage from './pages/Skills/Skills'
+import ResumePage from './pages/Resume/Resume'
+import NotFound from './pages/NotFound'
 
-function AppRoutes() {
-  return (
-    <Routes>
-      <Route path="/" element={<App />} />
-      <Route path="/projects" element={<ProjectsPage />} />
-      <Route path="/resume" element={<div className="page-placeholder">Resume page coming soon.</div>} />
-      <Route path="/skills" element={<SkillsPage />} />
-      <Route path="/contact" element={<ContactPage />} />
-      <Route path="*" element={<App />} />
-    </Routes>
-  )
-}
-
-export default AppRoutes
+export const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <Layout />,
+    children: [
+      { index: true, element: <App /> },
+      { path: 'projects', element: <ProjectsPage /> },
+      { path: 'projects/:slug', element: <ProjectDetail /> },
+      { path: 'resume', element: <ResumePage /> },
+      { path: 'skills', element: <SkillsPage /> },
+      { path: 'contact', element: <ContactPage /> },
+      { path: '*', element: <NotFound /> },
+    ],
+  },
+])
