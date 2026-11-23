@@ -8,7 +8,7 @@ export default function Footer() {
       <div className="wrap footer__inner">
         <div>
           <Link to="/" className="footer-name">
-            Gavin Sands
+            <img src="/favicon.svg" alt="" width="32" height="32" /> Gavin Sands
           </Link>
           <p>Iowa State University · Ames, Iowa</p>
         </div>

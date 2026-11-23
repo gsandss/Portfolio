@@ -8,18 +8,17 @@ export default function SkillsPage() {
   return (
     <section className="wrap inside-page">
       <header className="page-intro">
-        <p className="label with-rule">What I bring</p>
         <h1>Skills</h1>
         <p>
-          I've built this toolkit through classes, hands-on projects, and a genuine curiosity about
-          how technology can make everyday problems feel simpler.
+          I use these languages and tools to build software, test models at TrAC, and support
+          the IT team at the ISU Foundation.
         </p>
       </header>
       <div className="skill-grid">
         {skillGroups.map((group) => {
           const project = projects.find((item) => item.slug === group.projectSlug)
           return (
-            <article className="skill-group" key={group.title}>
+            <article className="skill-group" data-reveal key={group.title}>
               <Icon name={group.icon} />
               <h2>{group.title}</h2>
               <ul className="skill-list">
@@ -37,7 +36,7 @@ export default function SkillsPage() {
             </article>
           )
         })}
-        <article className="skill-group">
+        <article className="skill-group" data-reveal>
           <Icon name="network" />
           <h2>Research &amp; IT</h2>
           <div className="skill-roles">

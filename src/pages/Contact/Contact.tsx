@@ -6,7 +6,6 @@ export default function ContactPage() {
   return (
     <section className="wrap inside-page">
       <header className="page-intro">
-        <p className="label with-rule">Get in touch</p>
         <h1>Contact and profiles</h1>
         <p>
           For a role, a collaboration, or a question about one of my projects, email is the best
@@ -14,12 +13,12 @@ export default function ContactPage() {
         </p>
       </header>
       <div className="contact-layout">
-        <div className="email-panel">
+        <div className="email-panel" data-reveal>
           <Icon name="mail" />
           <h2>Email me</h2>
           <a href={email.href}>{email.value}</a>
         </div>
-        <dl className="contact-list">
+        <dl className="contact-list" data-reveal>
           {contactLinks
             .filter((item) => item !== email)
             .map((item) => (

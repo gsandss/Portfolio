@@ -21,13 +21,13 @@ export default function ProjectDetail() {
         <p>{project.description}</p>
       </header>
       <div className="detail-layout">
-        <div className="detail-copy">
+        <div className="detail-copy" data-reveal>
           <h2>Inside the build</h2>
           {project.notes.map((note) => (
             <p key={note}>{note}</p>
           ))}
         </div>
-        <aside className="toolbox">
+        <aside className="toolbox" data-reveal>
           <h2 className="label">Built with</h2>
           <ul className="tags">
             {project.tech.map((tech) => (
@@ -46,7 +46,7 @@ export default function ProjectDetail() {
         </aside>
       </div>
       {slug === 'ai-code-debugger' && (
-        <figure className="project-shot">
+        <figure className="project-shot" data-reveal>
           <img
             src={screenshot}
             width="1496"

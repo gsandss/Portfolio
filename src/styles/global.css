@@ -21,12 +21,12 @@
   font-display: swap;
 }
 :root {
-  --pine: #142c24;
-  --ink: #192d24;
-  --muted: #525f55;
-  --lime: #daed9d;
-  --paper: #f8f8f2;
-  --line: #d0d6c9;
+  --pine: #203d30;
+  --ink: #21332a;
+  --muted: #4b584d;
+  --lime: #e8cf9e;
+  --paper: #f7f4e9;
+  --line: #c6c9b8;
   --serif: 'Instrument Serif', Georgia, serif;
   --sans: 'DM Sans', 'Segoe UI', sans-serif;
   --mono: 'IBM Plex Mono', Consolas, monospace;
@@ -83,15 +83,13 @@ p {
 }
 ::selection {
   background: #d1e887;
-  color: #142c24;
+  color: #203d30;
 }
 :focus-visible {
   outline: 3px solid #67832b;
   outline-offset: 4px;
 }
-.masthead :focus-visible,
-.hero :focus-visible,
-.footer :focus-visible {
+.campus-section :focus-visible {
   outline-color: var(--lime);
 }
 main:focus,
@@ -130,7 +128,7 @@ main {
   content: '';
   height: 1px;
   width: 1.7rem;
-  background: #758c4f;
+  background: #a75f37;
 }
 .button {
   display: inline-flex;
@@ -140,7 +138,7 @@ main {
   min-height: 2.85rem;
   padding: 0.7rem 1.1rem;
   border: 1px solid transparent;
-  border-radius: 0.32rem;
+  border-radius: 0.15rem;
   font: 600 0.92rem/1.35 var(--sans);
   transition:
     background 0.2s,
@@ -157,7 +155,7 @@ main {
 }
 .button--glass {
   color: #fcfff8;
-  background: #142c244d;
+  background: #203d304d;
   border-color: #a2afa4;
 }
 .button:hover {
@@ -198,11 +196,29 @@ main {
   list-style: none;
 }
 .tags li {
-  border: 1px solid var(--line);
-  border-radius: 0.23rem;
-  padding: 0.25rem 0.5rem;
+  padding: 0.16rem 0;
   color: #37483c;
   font: 0.75rem/1.4 var(--mono);
+}
+.tags li + li::before {
+  content: '/';
+  padding-right: 0.38rem;
+  color: #687661;
+}
+.journal-link {
+  display: inline-block;
+  padding-block: 0.4rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: underline;
+  text-decoration-color: #9b7355;
+  text-underline-offset: 0.32em;
+}
+.journal-link:hover {
+  text-decoration-thickness: 2px;
+}
+.campus-section .journal-link {
+  text-decoration-color: #c2a476;
 }
 .skip-link,
 .sr-only {
@@ -224,12 +240,30 @@ main {
   color: var(--pine);
   padding: 0.7rem;
 }
-@media (prefers-reduced-motion: no-preference) {
+@media screen and (prefers-reduced-motion: no-preference) {
   html:has(#selected-work:target) {
     scroll-behavior: smooth;
   }
+  [data-entered]:not(:focus-within) {
+    animation: section-in 0.65s cubic-bezier(0.22, 0.7, 0.23, 1) both;
+  }
   .page-enter {
     animation: page-in 0.32s cubic-bezier(0.22, 0.75, 0.32, 1) both;
+  }
+}
+@keyframes section-in {
+  from {
+    opacity: 0.5;
+    transform: translateY(1.35rem);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@media print {
+  [data-entered] {
+    animation: none !important;
   }
 }
 @keyframes page-in {

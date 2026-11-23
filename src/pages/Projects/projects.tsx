@@ -7,10 +7,9 @@ export default function ProjectsPage() {
   return (
     <div className="wrap inside-page">
       <header className="page-intro">
-        <p className="label with-rule">Selected work</p>
         <h1>Projects</h1>
         <p>
-          A collection of recent builds focused on AI, thoughtful UX, and practical web products.
+          A local Python debugger, a visual guide to sorting, and four more projects from my time at Iowa State.
         </p>
       </header>
       <section aria-labelledby="featured-title" className="featured-grid">
@@ -22,9 +21,9 @@ export default function ProjectsPage() {
         ))}
       </section>
       <section className="project-index">
-        <h2>More projects</h2>
+        <h2 data-reveal>More projects</h2>
         {projects.slice(2).map((project) => (
-          <Link className="index-row" to={'/projects/' + project.slug} key={project.slug}>
+          <Link data-reveal className="index-row" to={'/projects/' + project.slug} key={project.slug}>
             <div>
               <span className="label">{project.category}</span>
               <h3>{project.title}</h3>

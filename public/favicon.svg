@@ -1,1 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="12" fill="#d9ec99"/><text x="7" y="44" font-family="Georgia,serif" font-style="italic" font-size="48" letter-spacing="-5" fill="#142c24">gs</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <path fill="#244938" d="M4 13 32 3l28 10v28c0 7-12 14-28 21C16 55 4 48 4 41Z"/>
+  <path fill="none" stroke="#eeddad" stroke-width="2" d="m13 18 19-7 19 7"/>
+  <path fill="none" stroke="#faf3de" stroke-width="4.6" stroke-linecap="square" stroke-linejoin="bevel" d="M28 24h-9l-5 5v9l5 5h9V33h-7m27-9h-9l-4 4v3l4 3h5l4 3v3l-4 3h-9"/>
+  <path fill="#eeddad" d="m28 51 4-2 4 2-4 2Z"/>
+</svg>

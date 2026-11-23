@@ -32,7 +32,7 @@ export default function SortDemo() {
   const frame = frames[step]
   const done = step === frames.length - 1
   return (
-    <section className="demo" aria-labelledby="demo-title">
+    <section className="demo" data-reveal aria-labelledby="demo-title">
       <p className="label">Interactive example</p>
       <h2 id="demo-title">Step through bubble sort</h2>
       <p>Compare neighboring values and move the larger one to the right.</p>

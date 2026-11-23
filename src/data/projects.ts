@@ -14,7 +14,7 @@ export const projects: Project[] = [
     title: 'AI Code Debugger',
     category: 'Applied AI',
     description:
-      'Full-stack AI debugging application using Python, a Flask API, and local LLM integration for code analysis.',
+      'Run Python in a browser and ask a local language model to explain the error beside your code.',
     tech: ['Python', 'Flask', 'JavaScript', 'LM Studio', 'HTML & CSS'],
     link: 'https://github.com/gsandss/Code-Debugger',
     notes: [
@@ -27,7 +27,7 @@ export const projects: Project[] = [
     title: 'DSA Visualizer',
     category: 'Algorithms',
     description:
-      'An education platform that visualizes key data structures and algorithms. This is a full-stack project built using React and JavaScript.',
+      'Follow a sorting algorithm one comparison at a time. Each swap shows how the array moves toward its final order.',
     tech: ['React', 'Node.js', 'JavaScript'],
     link: 'https://github.com/gsandss/Data-Structure-Algorithm-Visualization',
     notes: [

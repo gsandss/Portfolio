@@ -4,7 +4,7 @@ import ProjectArtwork from './ProjectArtwork'
 
 export default function ProjectCard({ project }: { project: Project }) {
   return (
-    <article className="project-card">
+    <article className="project-card" data-reveal>
       <Link to={'/projects/' + project.slug} aria-label={'Explore ' + project.title}>
         <ProjectArtwork slug={project.slug} />
         <div className="project-card__body">

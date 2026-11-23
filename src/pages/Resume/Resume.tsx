@@ -26,7 +26,7 @@ export default function ResumePage() {
             </a>
           ))}
       </div>
-      <section className="resume-section">
+      <section className="resume-section" data-reveal>
         <h2>Education</h2>
         <div className="resume-item">
           <div className="resume-title">
@@ -37,7 +37,7 @@ export default function ResumePage() {
           <p>Minors in Artificial Intelligence and Applied Artificial Intelligence.</p>
         </div>
       </section>
-      <section className="resume-section">
+      <section className="resume-section" data-reveal>
         <h2>Experience</h2>
         <div>
           {experience.map((role) => (
@@ -56,7 +56,7 @@ export default function ResumePage() {
           ))}
         </div>
       </section>
-      <section className="resume-section">
+      <section className="resume-section" data-reveal>
         <h2>Technical projects</h2>
         <div>
           {resumeProjects.map((project) => (
@@ -77,7 +77,7 @@ export default function ResumePage() {
           ))}
         </div>
       </section>
-      <section className="resume-section">
+      <section className="resume-section" data-reveal>
         <h2>Technical skills</h2>
         <div>
           {skillGroups.map((group) => (

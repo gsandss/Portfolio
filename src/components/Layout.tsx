@@ -27,6 +27,26 @@ export default function Layout() {
     previousPath.current = pathname
   }, [pathname])
 
+  useLayoutEffect(() => {
+    const motion = window.matchMedia('(prefers-reduced-motion: reduce)')
+    if (motion.matches || !('IntersectionObserver' in window)) return
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (!entry.isIntersecting) continue
+          if (!motion.matches) entry.target.setAttribute('data-entered', '')
+          observer.unobserve(entry.target)
+        }
+      },
+      { rootMargin: '0px 0px -12px' },
+    )
+
+    main.current?.querySelectorAll('[data-reveal]').forEach((section) => {
+      if (section.getBoundingClientRect().top >= window.innerHeight) observer.observe(section)
+    })
+    return () => observer.disconnect()
+  }, [pathname])
+
   return (
     <div className="app-shell">
       <a className="skip-link" href="#main-content">

@@ -45,9 +45,7 @@ export default function Navbar() {
           aria-label="Gavin Sands, home"
           onClick={() => setOpenAt(null)}
         >
-          <span className="monogram" aria-hidden="true">
-            gs
-          </span>
+          <img src="/favicon.svg" alt="" width="40" height="40" />
           <span>Gavin Sands</span>
         </Link>
         <button
@@ -75,7 +73,7 @@ export default function Navbar() {
             </NavLink>
           ))}
           <NavLink to="/contact" className="nav-contact" onClick={() => setOpenAt(null)}>
-            <Icon name="mail" /> Get in touch
+            Get in touch
           </NavLink>
         </nav>
       </div>
