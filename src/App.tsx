@@ -10,8 +10,8 @@ import './App.css'
 export default function App() {
   return (
     <>
-      <section className="wrap hero" aria-labelledby="intro-title">
-        <div className="hero__copy">
+      <section className="hero" aria-labelledby="intro-title">
+        <div className="wrap hero__copy">
           <p className="label with-rule">Computer science · Iowa State</p>
           <h1 id="intro-title">
             Gavin <em>Sands</em>
@@ -21,7 +21,7 @@ export default function App() {
             their code is doing, from a Python debugger to a sorting visualizer.
           </p>
           <div className="actions">
-            <a href="#selected-work" className="button button--dark">
+            <a href="#selected-work" className="button button--lime">
               Explore projects
             </a>
             <Link to="/resume" className="journal-link">
@@ -29,27 +29,16 @@ export default function App() {
             </Link>
           </div>
         </div>
-        <div className="hero__photos">
-          <picture className="hero__landscape">
-            <source media="(max-width: 700px)" srcSet={mountainSmall} />
-            <img
-              src={mountain}
-              alt="A river winding between forested slopes and snow-covered peaks."
-              width="1920"
-              height="1280"
-              fetchPriority="high"
-            />
-          </picture>
-          <figure className="campus-print">
-            <img
-              src={campus}
-              alt="Iowa State’s campanile framed by autumn trees."
-              width="509"
-              height="339"
-            />
-            <figcaption>On campus, Ames</figcaption>
-          </figure>
-        </div>
+        <picture className="hero__landscape">
+          <source media="(max-width: 700px)" srcSet={mountainSmall} />
+          <img
+            src={mountain}
+            alt="A river winding between forested slopes and snow-covered peaks."
+            width="1920"
+            height="1280"
+            fetchPriority="high"
+          />
+        </picture>
       </section>
 
       <section
@@ -76,6 +65,15 @@ export default function App() {
       <section className="campus-section" aria-labelledby="campus-title">
         <div className="wrap campus-section__inner">
           <div data-reveal>
+            <figure className="campus-print">
+              <img
+                src={campus}
+                alt="Iowa State’s campanile framed by autumn trees."
+                width="509"
+                height="339"
+              />
+              <figcaption>On campus, Ames</figcaption>
+            </figure>
             <p className="label">Research &amp; IT</p>
             <h2 id="campus-title">At Iowa State</h2>
             <Link className="journal-link" to="/resume">
